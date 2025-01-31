@@ -4,6 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image Filter | Royal Tk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
   </head>
-  <body></body>
+  <body>
+    <section>
+      <h2>Tk's Image Editor</h2>
+
+      <main class="wrapper">
+        <div class="left">
+          <h3>Filters</h3>
+          <div class="filters">
+            <button class="filters__active">Brightness</button>
+            <button>Saturation</button>
+            <button>Inversion</button
+            ><button>Grayscale</button>
+          </div>
+          <div class="filters__info">
+            <p id="filter__info--name">Brightness</p>
+            <p id="filter__info--value">100%</p>
+          </div>
+          <div class="filters__range">
+            <input id="range" type="range" min="0" max="1" step="0.1">
+          </div>
+          <h3>
+            Rotate and Flip
+          </h3>
+
+          <div class="filters__dir">
+            <div class="box"><i class="fa fa-arrow-up"></i></div>
+            <div class="box"><i class="fa fa-arrow-left"></i></div>
+            <div class="box"><i class="fa fa-arrow-right"></i></div>
+            <div class="box"><i class="fa fa-arrow-down"></i></div>
+          </div>
+        </div>
+        <div class="right">
+          <img src="../img/default.png" alt="Image to edit" draggable="false"/>
+        </div>
+
+        <div class="extra">
+            <div class="extra__left">
+                <button class="reset">Reset Filters</button>
+            </div>
+            <div class="extra__right">
+                <button class="choose-img">Choose Image</button>
+                <button class="save-img">Save Image</button>
+            </div>
+        </div>
+      </main>
+    </section>
+  </body>
 </html>
