@@ -31,5 +31,18 @@ imageUpload.addEventListener("change", function (e) {
 
 range.addEventListener("change", function (e) {
   filterValue.textContent = `${Math.trunc(range.value * 100)}%`;
+
+  if (filterName.textContent === "Grayscale"){
+    image.style.filter = `grayscale(${filterValue.textContent})`
+  }
+  if (filterName.textContent === "Inversion"){
+    image.style.filter = `invert(${filterValue.textContent})`
+  }
+  if (filterName.textContent === "Brightness"){
+    image.style.filter = `brightness(${filterValue.textContent})`
+  }
+  if (filterName.textContent === "Saturation"){
+    image.style.filter = `saturate(${filterValue.textContent})`
+  }
   
 });
