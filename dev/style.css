@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Delius&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -8,4 +9,183 @@ html {
 }
 body {
   font-size: 1.5em;
+}
+
+:root {
+  --primary: #121220;
+  --secondary: #f5f5f5;
+  --accent: #ff4500;
+  --trans: 0.2s ease-in;
+  --radius: 3px;
+  --border: 1px solid var(--primary);
+}
+
+body {
+  display: grid;
+  place-content: center;
+  height: 100dvh;
+  background: var(--primary);
+  color: var(--primary);
+  font-family: sans-serif;
+}
+
+section {
+  width: 90rem;
+  height: 80dvh;
+  background: var(--secondary);
+  padding: 3rem;
+
+  h2 {
+    margin-bottom: 4rem;
+    font-family: "Delius", sans-serif;
+    font-size: 2.4rem;
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 2rem;
+
+  h3 {
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .left {
+    border: 1px solid var(--primary);
+    padding: 1rem 1.5rem;
+    flex: 40%;
+    align-self: stretch;
+    border-radius: var(--radius);
+
+    .filters {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1rem;
+      margin-bottom: 3rem;
+
+      button {
+        border: var(--border);
+        background: transparent;
+        padding: 1rem 2rem;
+        border-radius: var(--radius);
+        cursor: pointer;
+        transition: var(--trans);
+      }
+      button.filters__active {
+        background: var(--accent);
+        color: var(--secondary);
+      }
+      button.filters__active:hover {
+        filter: brightness(0.9);
+      }
+
+      button:not(.filters__active):hover {
+        filter: opacity(0.7);
+      }
+    }
+
+    .filters__info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+
+      p#filter__info--name {
+        font-weight: bold;
+      }
+    }
+
+    .filters__range {
+      width: 100%;
+      margin-bottom: 1rem;
+
+      input {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .filters__dir {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      gap: 1rem;
+
+      .box {
+        width: calc(30 / 4 * 1rem);
+        height: 4rem;
+        display: grid;
+        place-content: center;
+        background: var(--secondary);
+        border: var(--border);
+        cursor: pointer;
+      }
+
+      .box:hover {
+        filter: contrast(0.8);
+      }
+      .box:active {
+        filter: contrast(1);
+      }
+    }
+  }
+
+  .right {
+    flex: 60%;
+    background: #000;
+
+    img {
+      display: block;
+      height: 34.3rem;
+      width: 45.8rem;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+}
+
+.extra {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+
+  button,
+  label {
+    padding: 2rem 4rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: var(--trans);
+    
+    
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+
+  button:first-child {
+    background: var(--secondary);
+    border: var(--border);
+  }
+
+  input {
+    display: none;
+  }
+
+  label {
+    background: hsl(from var(--primary) calc(h + 70) s l);
+    color: var(--secondary);
+  }
+
+  .extra__right button:last-child {
+    background: var(--accent);
+    border: none;
+    color: var(--secondary);
+  }
+}
+
+#range::-webkit-slider-thumb{
+  scale: 1.3;
 }
